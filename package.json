@@ -1,5 +1,5 @@
 {
-  "name": "rn-imin-printer",
+  "name": "@ziveso/rn-imin-printer",
   "version": "0.1.0",
   "description": "react-native imin inner printer lib",
   "main": "lib/commonjs/index",
