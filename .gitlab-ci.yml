@@ -1,10 +1,13 @@
-include:
-  - project: wongnai/frontend/ci-cd-templates
-    file: variables/internal-library.yaml
-  - project: wongnai/frontend/ci-cd-templates # Don't include this if you want custom stages
-    file: stages/internal-library.yaml
-  - project: wongnai/frontend/ci-cd-templates
-    file: jobs/release.yaml
-
 publish to nexus:
-  extends: .release
+  stage: deploy
+  only: [main, dev]
+  when: manual
+  cache:
+    key: ${CI_PIPELINE_ID}
+    paths:
+      - node_modules
+    policy: pull
+  script:
+    - yarn release
+  environment:
+    name: $CI_COMMIT_BRANCH
