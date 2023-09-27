@@ -47,6 +47,7 @@
   "publishConfig": {
     "registry": "https://nexus.wndv.co/repository/wnnpm/"
   },
+  "homepage": "https://git.wndv.co/thitiwat.t/rn-imin-printer",
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.2.2",
