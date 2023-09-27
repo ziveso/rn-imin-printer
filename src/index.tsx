@@ -17,6 +17,4 @@ const RnIminPrinter = NativeModules.RnIminPrinter
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return RnIminPrinter.multiply(a, b);
-}
+export default RnIminPrinter;
