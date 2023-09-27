@@ -1,5 +1,5 @@
 {
-  "name": "@ziveso/rn-imin-printer",
+  "name": "rn-imin-printer",
   "version": "0.2.0",
   "description": "react-native imin inner printer lib",
   "main": "lib/commonjs/index",
@@ -32,7 +32,8 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "prepack": "bob build",
-    "release": "release-it",
+    "release": "semantic-release",
+    "postversion": "cp package.json ..",
     "example": "yarn workspace rn-imin-printer-example"
   },
   "keywords": [
@@ -40,19 +41,16 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/ziveso/rn-imin-printer",
+  "repository": "ssh://git@git.wndv.co:10022/thitiwat.t/rn-imin-printer.git",
   "author": "Thitiwat Thongbor <thitiwat.t@lmwn.com> (https://github.com/ziveso)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ziveso/rn-imin-printer/issues"
-  },
-  "homepage": "https://github.com/ziveso/rn-imin-printer#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://nexus.wndv.co/repository/wnnpm/"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.2.2",
+    "@lmwn/semantic-release-lib": "^2.1.0",
     "@react-native/eslint-config": "^0.72.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
@@ -80,9 +78,6 @@
     "react": "*",
     "react-native": "*"
   },
-  "workspaces": [
-    "example"
-  ],
   "packageManager": "yarn@3.6.1",
   "engines": {
     "node": ">= 18.0.0"

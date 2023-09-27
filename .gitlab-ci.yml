@@ -1,0 +1,10 @@
+include:
+  - project: wongnai/frontend/ci-cd-templates
+    file: variables/internal-library.yaml
+  - project: wongnai/frontend/ci-cd-templates # Don't include this if you want custom stages
+    file: stages/internal-library.yaml
+  - project: wongnai/frontend/ci-cd-templates
+    file: jobs/release.yaml
+
+publish to nexus:
+  extends: .release
